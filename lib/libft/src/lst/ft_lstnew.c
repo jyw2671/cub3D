@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/17 16:45:57 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/18 15:38:51 by yjung            ###   ########.fr       */
+/*   Created: 2021/02/18 15:10:38 by yjung             #+#    #+#             */
+/*   Updated: 2021/02/18 15:16:33 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <limits.h>
+/*
+** ft_lstnew -  returns a new element with initialized
+*/
 
-# include "ft_libft_type.h"
-# include "ft_math.h"
-# include "ft_memory.h"
-# include "ft_string.h"
-# include "get_next_line.h"
-# include "ft_lst_type.h"
-# include "ft_lst.h"
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*result;
 
-#endif
+	if (!(result = malloc(sizeof(t_list))))
+		return (0);
+	result->content = content;
+	result->next = 0;
+	return (result);
+}

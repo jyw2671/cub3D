@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:10:40 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/18 15:01:58 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/18 15:46:36 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <math.h>
+# include <fcntl.h>
 # include "libft.h"
 # include "x_event.h"
 

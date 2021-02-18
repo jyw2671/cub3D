@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/17 16:45:57 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/18 15:38:51 by yjung            ###   ########.fr       */
+/*   Created: 2021/02/18 15:11:40 by yjung             #+#    #+#             */
+/*   Updated: 2021/02/18 15:16:15 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <limits.h>
+/*
+** ft_lstadd_back - Adds the element 'new' at the end of the list.
+*/
 
-# include "ft_libft_type.h"
-# include "ft_math.h"
-# include "ft_memory.h"
-# include "ft_string.h"
-# include "get_next_line.h"
-# include "ft_lst_type.h"
-# include "ft_lst.h"
-
-#endif
+void	ft_lstadd_back(t_list **lst, t_list *new_list)
+{
+	if (*lst == 0)
+		*lst = new_list;
+	else
+		(ft_lstlast(*lst))->next = new_list;
+}

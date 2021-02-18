@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/17 16:45:57 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/18 15:38:51 by yjung            ###   ########.fr       */
+/*   Created: 2021/02/18 15:10:17 by yjung             #+#    #+#             */
+/*   Updated: 2021/02/18 15:38:54 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <limits.h>
+/*
+** ft_lstclear - Deletes and frees the given element and every
+** successor of that element
+*/
 
-# include "ft_libft_type.h"
-# include "ft_math.h"
-# include "ft_memory.h"
-# include "ft_string.h"
-# include "get_next_line.h"
-# include "ft_lst_type.h"
-# include "ft_lst.h"
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	t_list *tmp;
 
-#endif
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = tmp;
+	}
+	*lst = 0;
+}

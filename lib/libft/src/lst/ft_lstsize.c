@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/17 16:45:57 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/18 15:38:51 by yjung            ###   ########.fr       */
+/*   Created: 2021/02/18 15:11:06 by yjung             #+#    #+#             */
+/*   Updated: 2021/02/18 15:15:47 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <limits.h>
+/*
+** ft_lstsize - Counts the number of elements in a list.
+*/
 
-# include "ft_libft_type.h"
-# include "ft_math.h"
-# include "ft_memory.h"
-# include "ft_string.h"
-# include "get_next_line.h"
-# include "ft_lst_type.h"
-# include "ft_lst.h"
+int	ft_lstsize(t_list *lst)
+{
+	size_t size;
 
-#endif
+	size = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		size++;
+	}
+	return (size);
+}

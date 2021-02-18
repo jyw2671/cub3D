@@ -6,7 +6,7 @@
 #    By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/17 22:35:39 by yjung             #+#    #+#              #
-#    Updated: 2021/02/18 14:42:49 by yjung            ###   ########.fr        #
+#    Updated: 2021/02/18 15:41:28 by yjung            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ HEADERS = $(addprefix $(INC_DIR)/, \
 	ft_memory.h	\
 	get_next_line.h	\
 	ft_lst_type.h	\
+	ft_lst.h	\
 )
 
 SRC_MATH_DIR = $(SRC_DIR)/math
@@ -63,25 +64,36 @@ SRC_GNL = $(addprefix $(SRC_GNL_DIR)/, \
 	get_next_line.c	\
 )
 
+SRC_LST_DIR = $(SRC_DIR)/lst
+SRC_LST = $(addprefix $(SRC_LST_DIR)/, \
+	ft_lstadd_back.c	\
+	ft_lstclear.c	\
+	ft_lstlast.c	\
+	ft_lstnew.c	\
+	ft_lstsize.c	\
+)
+
 SRCS = \
 	$(SRC_MATH)	\
 	$(SRC_MEMORY)	\
 	$(SRC_STRING)	\
-	$(SRC_GNL)
+	$(SRC_GNL)	\
+	$(SRC_LST)
 
 vpath %.c \
 	$(SRC_DIR)	\
 	$(SRC_MATH_DIR)	\
 	$(SRC_MEMORY_DIR)	\
 	$(SRC_STRING_DIR)	\
-	$(SRC_GNL_DIR)
+	$(SRC_GNL_DIR)	\
+	$(SRC_LST_DIR)
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 
 all : $(NAME)
 
 clean :
-	@$(RM) $(RMFLAGS) $(OBJS) $(OBJS_BONUS)
+	@$(RM) $(RMFLAGS) $(OBJS)
 
 fclean : clean
 	@$(RM) $(RMFLAGS) $(NAME)
@@ -90,7 +102,7 @@ re : fclean all
 
 $(OBJ_DIR)/%.o : %.c
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(CDEBUG) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
 $(NAME) : $(HEADERS) $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $(OBJS)
