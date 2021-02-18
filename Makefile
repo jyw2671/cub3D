@@ -6,7 +6,7 @@
 #    By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/26 18:16:35 by yjung             #+#    #+#              #
-#    Updated: 2021/01/27 11:56:19 by yjung            ###   ########.fr        #
+#    Updated: 2021/02/18 16:07:29 by yjung            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,16 +43,16 @@ OBJ_DIR = obj
 
 HEADERS = $(wildcard $(INC_DIR)/*.h)
 
-MINILIBX_DIR = $(SRC_DIR)/minilibx_tool
-MINILIBX_SRCS = $(wildcard $(MINILIBX_DIR)/*.c)
+# MINILIBX_DIR = $(SRC_DIR)/minilibx_tool
+# MINILIBX_SRCS = $(wildcard $(MINILIBX_DIR)/*.c)
 
 SRCS = \
-	$(wildcard $(SRC_DIR)/*.c) \
-	$(MINILIBX_SRCS)
+	$(wildcard $(SRC_DIR)/*.c)
+	# $(MINILIBX_SRCS)
 
 vpath %.c \
-	$(SRC_DIR) \
-	$(MINILIBX_DIR)
+	$(SRC_DIR)
+	# $(MINILIBX_DIR)
 
 SRCS += $(wildcard $(SRC_DIR)/dummy_mac/*.c)
 vpath %.c $(SRC_DIR)/dummy_mac
@@ -62,7 +62,7 @@ OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 all : $(NAME)
 
 clean :
-	@$(RM) $(RMFLAGS) $(OBJS) $(OBJS_BONUS)
+	@$(RM) $(RMFLAGS) $(OBJS)
 
 fclean : clean $(LIBFT)_fclean $(MLX)_clean
 	@$(RM) $(RMFLAGS) $(NAME)
@@ -71,10 +71,10 @@ re : fclean all
 
 $(OBJ_DIR)/%.o : %.c
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(CDEBUG) $(CFLAGS) $(CINCLUDES) -c $< -o $@
+	@$(CC) $(CFLAGS) $(CINCLUDES) -c $< -o $@
 
 $(NAME) : cub3d.c $(MLX_FILE) $(LIBFT_FILE) $(HEADERS) $(OBJS)
-	@$(CC) $(CDEBUG) $(CFLAGS) $(CINCLUDES) $(OBJS) -o $(NAME) $(LIBFT_FLAGS) $(MLX_FLAGS)
+	@$(CC) $(CFLAGS) $(CINCLUDES) $(OBJS) -o $(NAME) $(LIBFT_FLAGS) $(MLX_FLAGS)
 
 test : $(NAME)
 	@./cub3D

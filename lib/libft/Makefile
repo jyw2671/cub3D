@@ -6,7 +6,7 @@
 #    By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/17 22:35:39 by yjung             #+#    #+#              #
-#    Updated: 2021/02/18 15:41:28 by yjung            ###   ########.fr        #
+#    Updated: 2021/02/18 16:11:15 by yjung            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ SRC_STRING = $(addprefix $(SRC_STRING_DIR)/, \
 	ft_strchr.c	\
 	ft_strjoin.c	\
 	ft_strlen.c	\
-	ft_strndup.c	\
+	ft_strcmp.c	\
 	ft_split_cnt.c	\
 	ft_strndup.c	\
 )
