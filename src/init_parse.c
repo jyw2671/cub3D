@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:19:45 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/17 20:10:28 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/18 18:08:06 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,14 @@ static void		switch_parse(t_cub3d *g, char **split, int word_cnt)
 	else
 		exit_cub3d_msg(g, "invaild map file");
 }
+	// 해상도를 나타내는 R element 에서는 init_resolution으로 들어가
+	// t_cub3d 구조체의 v(t_img)안에 정보를 저장
+	// 나머지 elements 들은 
 
 static void		check_parse_type(t_cub3d *g, char *line)
 {
 	int		word_cnt;
+	// 한줄씩 
 	char	**split;
 
 	if (ft_strlen(line))
@@ -91,10 +95,11 @@ void			init_parse(t_cub3d *g, char *path)
 		// O_RDONLY : 읽기 전용으로 open
 		// O_WRONLY : 쓰기 전용으로 open
 		// O_RDWR : 읽고 쓰기를 모두 할 수 있도록 open
+		// 위의 내용을 쓰기 위해서는 <fcntl.h>를 include 해야 한다
 	// 여기서의 path는 .cub 파일의 경로
 	while ((g_parse_check != 0xFF) && (check = get_next_line(fd, &line)) >= 0)
 		check_parse_type(g, line);
-	// g_parse_check != 0xFF
+	// g_parse_check != 0xFF -> 0xFF : 16진법 256
 	// (check = get_next_line(fd, &line)) >= 0 -> gnl이 에러가 아니면
 
 	// parsing이 각 항목이 중첩되어서 파싱되는 것을 방지 하는 거랑
@@ -106,6 +111,7 @@ void			init_parse(t_cub3d *g, char *path)
 		exit_cub3d_msg(g, !check ? "invaild map file" : "file read error");
 	while ((check = get_next_line(fd, &line)) > 0 && !ft_strlen(line))
 		free(line);
+	// 첫번째 while문은 map 전까지의 정보를 parsing 하고 그 다음 while문은 map 정보를 parsing 한다
 	init_map(g, fd, line, &check);
 	init_sprite(g);
 	close(fd);

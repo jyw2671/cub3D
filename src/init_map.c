@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 15:41:18 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/18 14:40:51 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/18 17:13:16 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,9 @@ void		init_map(t_cub3d *g, int fd, char *line, int *check)
 	int		flag;
 
 	init_map_parsing(g, fd, line, check);
+	// 2차원배열에 맵을 저장해서 만들어야 하는데 맵의 길이하고 라인수를 알 수가 없어서
+	// 일단 리스트에 저장을 하고 난 다음에 max와 linked lst의 사이즈를 활용해서
+	// 2차원 배열에 재할당 시키도록 하는 함수
 	flag = 0;
 	i = -1;
 	while (++i < g->map.w * g->map.h)
