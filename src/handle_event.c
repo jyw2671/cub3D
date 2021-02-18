@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:15:10 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/17 20:52:45 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/18 15:04:06 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ int		handle_loop(t_cub3d *g)
 	mlx_do_sync(g->mlx);
 	return (0);
 }
-
-
 
 int		handle_exit_window(t_cub3d *g)
 {

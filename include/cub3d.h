@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:10:40 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/17 15:04:19 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/18 15:01:58 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 # include <unistd.h>
 # include <math.h>
 # include "libft.h"
-# include "cub3d_type.h"
 # include "x_event.h"
 
+# include "cub3d_type.h"
 # include "cub3d_util.h"
-# include "minilibx_tool.h"
+# include "cub3d_init.h"
+# include "cub3d_update.h"
+# include "cub3d_render.h"
 
 # include "key_mac.h"
 # include "dummy_mac.h"

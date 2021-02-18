@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lst_type.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/17 16:45:57 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/18 14:40:01 by yjung            ###   ########.fr       */
+/*   Created: 2021/02/18 14:38:46 by yjung             #+#    #+#             */
+/*   Updated: 2021/02/18 14:39:07 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_LST_TYPE_H
+# define FT_LST_TYPE_H
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
 # include <limits.h>
 
-# include "ft_libft_type.h"
-# include "ft_math.h"
-# include "ft_memory.h"
-# include "ft_string.h"
-# include "get_next_line.h"
-# include "ft_lst_type.h"
+typedef struct		s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 #endif

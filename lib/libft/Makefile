@@ -6,7 +6,7 @@
 #    By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/17 22:35:39 by yjung             #+#    #+#              #
-#    Updated: 2021/02/17 22:35:42 by yjung            ###   ########.fr        #
+#    Updated: 2021/02/18 14:42:49 by yjung            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ HEADERS = $(addprefix $(INC_DIR)/, \
 	ft_math.h	\
 	ft_memory.h	\
 	get_next_line.h	\
+	ft_lst_type.h	\
 )
 
 SRC_MATH_DIR = $(SRC_DIR)/math
@@ -53,7 +54,7 @@ SRC_STRING = $(addprefix $(SRC_STRING_DIR)/, \
 	ft_strjoin.c	\
 	ft_strlen.c	\
 	ft_strndup.c	\
-	ft_split_cnt	\
+	ft_split_cnt.c	\
 	ft_strndup.c	\
 )
 
