@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:19:45 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/18 18:08:06 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/19 19:25:42 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,23 @@ static void		switch_parse(t_cub3d *g, char **split, int word_cnt)
 }
 	// 해상도를 나타내는 R element 에서는 init_resolution으로 들어가
 	// t_cub3d 구조체의 v(t_img)안에 정보를 저장
-	// 나머지 elements 들은 
+	// 나머지 elements 들은
 
 static void		check_parse_type(t_cub3d *g, char *line)
 {
 	int		word_cnt;
-	// 한줄씩 
+	// 한 줄에 알맞은 정보들이 들어왔는지를 확인해주는 역할
 	char	**split;
 
 	if (ft_strlen(line))
 	{
 		if (!(split = ft_split_cnt(line, ' ', &word_cnt)))
 			exit_cub3d_msg(g, "malloc failed");
+			// char **split에 공백으로 ft_split_cnt 한것을 할당받는다
 		switch_parse(g, split, word_cnt);
+		// 올바른 내용이 들어왔는지를 확인하고 조건이 충족될때 각각의 조건문으로 들어가게 된다
 		ft_free_arr(split, word_cnt);
+		// 다 쓴 char **split free 시켜줌
 	}
 	free(line);
 }
@@ -99,6 +102,10 @@ void			init_parse(t_cub3d *g, char *path)
 	// 여기서의 path는 .cub 파일의 경로
 	while ((g_parse_check != 0xFF) && (check = get_next_line(fd, &line)) >= 0)
 		check_parse_type(g, line);
+		// check_parse_type 함수는 line 값을 역참조로 넣어준것이 아니므로
+		// line의 값은 계속 누적되서 저장되고 있다
+
+	// 의문점 -> (g_parse_check != 0xFF)
 	// g_parse_check != 0xFF -> 0xFF : 16진법 256
 	// (check = get_next_line(fd, &line)) >= 0 -> gnl이 에러가 아니면
 
