@@ -6,13 +6,29 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:15:30 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/17 18:15:36 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/21 00:59:37 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	update_player(t_cub3d *g)
+static void	check_player_pos(t_cub3d *g, float x, float y)
+{
+	t_vec	pos;
+	if ('1' == g->map.data[(int)y][(int)x])
+		return ;
+	if ('2' == g->map.data[(int)y][(int)x])
+	{
+		pos = new_vec(x - floor(x), y - floor(y));
+		if ((0.2 < pos.x && pos.x < 0.8) && (0.2 < pos.y && pos.y < 0.8))
+			return ;
+	}
+	g->pos.x = x;
+	g->pos.y = y;
+	return ;
+}
+
+void		update_player(t_cub3d *g)
 {
 	int		turn_dir;
 	t_ivec	walk_dir;
@@ -34,9 +50,6 @@ void	update_player(t_cub3d *g)
 		new_pos.y = g->pos.y + g->dir.y * (walk_dir.y * WALK_S);
 		new_pos.x += turn_vec.x * (walk_dir.x * WALK_S);
 		new_pos.y += turn_vec.y * (walk_dir.x * WALK_S);
-		if (g->map.data[(int)g->pos.y][(int)new_pos.x] != '1')
-			g->pos.x = new_pos.x;
-		if (g->map.data[(int)new_pos.y][(int)g->pos.x] != '1')
-			g->pos.y = new_pos.y;
+		check_player_pos(g, new_pos.x, new_pos.y);
 	}
 }
