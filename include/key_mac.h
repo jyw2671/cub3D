@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:11:28 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/19 22:28:50 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/20 21:36:05 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define KEY_A		0
 # define KEY_S		1
 # define KEY_D		2
+# define KEY_SPACE	49
 # define KEY_ESC	53
 # define KEY_UP		126
 # define KEY_DOWN	125
