@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:00:19 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/20 01:08:12 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/21 00:36:46 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ void	init_texture(t_cub3d *g, char *path, int tex_i)
 	if (!(img->ptr = \
 		mlx_xpm_file_to_image(g->mlx, path, &img->width, &img->height)))
 		exit_cub3d_msg(g, "texture load fail");
+		// filename과 int형 변수의 주솟값을 넘겨주면 xpm파일을 이미지로 변환 후
+		// 해당 이미지 포인터 반환
+		// int형 변수에는 해당 이미지의 width, height 저장
 	if (!(img->data = (t_color *)mlx_get_data_addr(\
 			img->ptr, &img->bpp, &img->size_l, &img->endian)))
 		exit_cub3d_msg(g, "texture data addr load fail..");
@@ -38,4 +41,8 @@ void	init_texture(t_cub3d *g, char *path, int tex_i)
 			// 해당 배열에 접근하여 이미지 정보 수정 가능
 	img->line = img->size_l / (img->bpp / 8);
 	// line의 역할은..?
+		// 이 부분은 배열에서 화면에 보이는 한줄에 대해서 저장을 width로만 하는 것이 아니라
+		// mms 라이브러리에서는 padding를 추가하여서 저장을 하게 되는데
+		// 그래서 실제 array 에서 [y * width + x]  이렇게 접근을 했을 때 제대로 접근이 안되는 문제가 있어서
+		// 위에 적혀진 공식으로 실제 line의 값을 구해서 y의 위치를 제대로 구할 수 있도록 한것
 }

@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:15:30 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/21 00:59:37 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/21 02:23:10 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	check_player_pos(t_cub3d *g, float x, float y)
 {
 	t_vec	pos;
+
 	if ('1' == g->map.data[(int)y][(int)x])
 		return ;
 	if ('2' == g->map.data[(int)y][(int)x])

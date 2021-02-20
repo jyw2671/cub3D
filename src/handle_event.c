@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:15:10 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/20 22:36:07 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/21 02:27:27 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,13 @@ int		handle_exit_window(t_cub3d *g)
 	return (0);
 }
 
+// static void	update_mini_map(t_cub3d *g)
+// {
+// 	g->m_map.img = mlx_new_image(g->mlx, (int)(g->v.width / 5), (int)(g->v.height / 5));
+// 	g->m_map.data = (int *)mlx_get_data_addr(g->m_map.img, &g->m_map.bpp, &g->m_map.size_l, &g->m_map.endian);
+// 	mlx_put_image_to_window(g->mlx, g->win, g->m_map.img, 0, 0);
+// }
+
 int		handle_loop(t_cub3d *g)
 {
 	update(g);
@@ -57,6 +64,8 @@ int		handle_loop(t_cub3d *g)
 	// 이미지를 읽기 위해서는 XMP파일이거나 PNG 파일 형식이어야 함
 	// mlx_xpm_file_to_image 혹은 mlx_png_file_to_image가 있는데
 	// png함수는 현재 메모리 누수라고 함 -> 그래서 xpm파일을 다들 읽는 거 였음
+	// if (g->key.space == 1)
+	// 	update_mini_map(g);
 	mlx_do_sync(g->mlx);
 	return (0);
 }

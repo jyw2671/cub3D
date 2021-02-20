@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:12:56 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/17 15:03:22 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/21 02:27:48 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,15 @@ typedef union	u_color
 	int			i;
 }				t_color;
 
+
+
 typedef struct	s_key
 {
 	char		w		:1;
 	char		a		:1;
 	char		s		:1;
 	char		d		:1;
+	char		space	:1;
 	char		up		:1;
 	char		down	:1;
 	char		left	:1;
@@ -63,6 +66,15 @@ typedef struct	s_img
 	int			bpp;
 	int			endian;
 }				t_img;
+
+// typedef struct	s_m_img
+// {
+// 	void	*img;
+// 	int		*data;
+// 	int		size_l;
+// 	int		bpp;
+// 	int		endian;
+// }				t_m_img;
 
 typedef struct	s_ray
 {
@@ -92,6 +104,7 @@ typedef struct	s_cub3d
 	void		*mlx;
 	void		*win;
 	t_img		v;
+	// t_m_img		m_map;
 
 	t_key		key;
 
