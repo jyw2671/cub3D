@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:12:56 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/21 02:27:48 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/22 17:17:58 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ typedef struct	s_cub3d
 	void		*mlx;
 	void		*win;
 	t_img		v;
+	t_img		m;
 	// t_m_img		m_map;
 
 	t_key		key;

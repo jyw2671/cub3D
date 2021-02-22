@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:15:30 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/21 02:23:10 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/22 14:08:05 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void		update_player(t_cub3d *g)
 	walk_dir.x = g->key.a ? -1 : 0;
 	walk_dir.x += g->key.d ? 1 : 0;
 	g->dir = rot_vec(g->dir, turn_dir * TURN_S * M_PI_180);
+	// g->key.left는 x축에서 왼쪽이므로 -1, g->key.right는 x축에서 오른쪽이므로 1을
+	// 누적해서 더해준다. 그 후 키가 눌러진만큼 3도씩을 곱해 앵글을 회전시켜준다
 	g->plane = rot_vec(g->plane, turn_dir * TURN_S * M_PI_180);
 	turn_vec = rot_vec(g->dir, 90 * M_PI_180);
 	if (walk_dir.x != 0 || walk_dir.y != 0)

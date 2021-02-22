@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:15:10 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/21 02:27:27 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/22 17:17:59 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,13 @@ int		handle_loop(t_cub3d *g)
 	update(g);
 	render(g);
 	mlx_put_image_to_window(g->mlx, g->win, g->v.ptr, 0, 0);
+	if (g->key.space == 1)
+	{
+		g->v.width = g->m.width;
+		mlx_put_image_to_window(g->mlx, g->win, g->v.ptr, 0, 0);
+	}
+	// if (g->key.space == 1)
+	// 	mlx_put_image_to_window(g->mlx, g->win, g->m.ptr, 0, 0);
 	// 파일로부터 이미지 만드는 함수
 	// 이미지를 읽기 위해서는 XMP파일이거나 PNG 파일 형식이어야 함
 	// mlx_xpm_file_to_image 혹은 mlx_png_file_to_image가 있는데

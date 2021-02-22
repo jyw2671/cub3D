@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 17:58:36 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/20 23:01:07 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/22 12:54:28 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void		init_resolution(t_cub3d *g, char **split)
 		g->v.width = resolution.x;
 	if (resolution.y < g->v.height)
 		g->v.height = resolution.y;
+	g->m.width = (int)(g->v.width / 6);
+	g->m.height = (int)(g->v.height / 6);
 	// 그냥 인자로 받은 해상도 정보가 문자이므로 itoa 해줘서
 	// 문자->숫자 정보로 바꿔서 저장해줌
 }
