@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:21:36 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/20 20:24:26 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/22 20:19:42 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	init_player(t_cub3d *g, t_vec pos, int *flag)
 	g->fov_h = g->v.width / 2 / tan(g->fov / 2);
 	g->plane = rot_vec(g->dir, 90 * M_PI_180);
 	// plane은 플레이어의 카메라평면
+	// parsing 받은 플레이어의 방향 벡터에 따라 plane을 리셋한다
 	g->plane.x *= tan(g->fov / 2);
 	g->plane.y *= tan(g->fov / 2);
 	*flag = 1;

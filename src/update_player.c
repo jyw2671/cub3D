@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:15:30 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/22 14:08:05 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/22 18:33:38 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static void	check_player_pos(t_cub3d *g, float x, float y)
 	if ('2' == g->map.data[(int)y][(int)x])
 	{
 		pos = new_vec(x - floor(x), y - floor(y));
+		// <math.h>의 함수 -> 소수점 아래를 버린다
 		if ((0.2 < pos.x && pos.x < 0.8) && (0.2 < pos.y && pos.y < 0.8))
 			return ;
 	}

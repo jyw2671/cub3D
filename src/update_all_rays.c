@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:21:50 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/22 17:17:55 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/22 21:58:46 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,25 @@ static void	cast_ray(t_cub3d *g, t_ray *ray)
 	int		hit;
 
 	delta_d.x = fabsf(1 / ray->dir.x);
+	// <math.h>의 함수 -> 절댓값을 만들어줌
+	// 피타고라스의 정리를 이용하여 산출한 식
 	delta_d.y = fabsf(1 / ray->dir.y);
 	step = new_ivec(ray->dir.x < 0 ? -1 : 1, ray->dir.y < 0 ? -1 : 1);
 	side_d.x = ray->dir.x < 0 ? (g->pos.x - ray->map.x) * delta_d.x :
 				(ray->map.x + 1.0 - g->pos.x) * delta_d.x;
 	side_d.y = ray->dir.y < 0 ? (g->pos.y - ray->map.y) * delta_d.y :
 				(ray->map.y + 1.0 - g->pos.y) * delta_d.y;
+	// (*) (1 - stepX) / 2 부분은 stepX가 -1, 1 인지에 따라 1, 0이 되는데 이는 rayDirX < 0 일 때
+	// 길이에 1을 더해주기 위함이다
+	// 즉 rayDirX < 0 이면 -> (mapX - posX + 1) / rayDirX 이다
+ 
 	// delta_d.x : 첫번째 x면 ~ 바로 다음 만나는 x면 까지의 광선의 이동거리 (x는 1증가 (블럭 크기가 1))
 	// delta_d.y : 첫번째 y면 ~ 바로 다음 만나는 y면 까지의 광선의 이동거리 (y는 1증가 (블럭 크기가 1))
 	// side_d.x : 시작점 ~ 첫번째 x면을 만나는 점까지의 광선의 이동거리
 	// side_d.y : 시작점 ~ 첫번째 y면을 만나는 점까지의 광선의 이동거리
 	hit = 0;
+	// hit : 부딪힌 여부에 대한 정보
+		// x면에 부딪히면 side를 0, y면에 부딪히면 side를 1로 저장
 	while (!hit)
 	{
 		if (side_d.x < side_d.y && !(ray->side = 0))
@@ -39,12 +47,21 @@ static void	cast_ray(t_cub3d *g, t_ray *ray)
 			((side_d.y += delta_d.y) || 1 ? (ray->map.y += step.y) : 0);
 		(g->map.data[ray->map.y][ray->map.x] == '1' ? hit = 1 : 0);
 	}
-	ray->dist = (ray->side ?
-		(ray->map.y - g->pos.y + (1 - step.y) / 2) / ray->dir.y :
-		(ray->map.x - g->pos.x + (1 - step.x) / 2) / ray->dir.x);
 	// ray->dir : 광선의 방향벡터 (빨간 선)
 		// ray->dir.x : 방향 벡터 + 카메라 평면 x 배수 → dirX + (planeX * cameraX) ↔ Y는 Y로 하면된다
 	// delta_d.x = |1 / ray->dir.x| - 피타고라스의 정리를 이용하여 산출한 식 ↔ Y또한 그대로 하면된다
+	ray->dist = (ray->side ?
+		(ray->map.y - g->pos.y + (1 - step.y) / 2) / ray->dir.y :
+		(ray->map.x - g->pos.x + (1 - step.x) / 2) / ray->dir.x);
+
+	//  중심으로 광선을 쏘게 되면 하나의 평면상의 벽도 볼록 렌즈로 보는것처럼 둥그렇게 울어서 보일수 있다.
+	//	따라서 유저가 속한 카메라 평면에서 수직의 선을 피사체에 그어서 해당 거리를 가지고 계산한다
+		// side == 0 일 경우 (x면에 부딛힌경우)
+		// -> ray->dist = (ray->map.x - g->pos.x + (1 - step.x) / 2) / ray->dir.x
+
+		// side == 1 일 경우 (y면)
+		// -> ray->dist = (ray->map.y - g->pos.y + (1 - step.y) / 2) / ray->dir.y
+
 }
 
 void		update_all_rays(t_cub3d *g)
@@ -55,6 +72,7 @@ void		update_all_rays(t_cub3d *g)
 
 	i = -1;
 	while (++i < g->num_rays)
+	// g->num_rays = g->v.width / WALL_STRIP_WIDTH;
 	{
 		camera_x = 2 * (i * WALL_STRIP_WIDTH) / (float)g->v.width - 1;
 		// cameraX : 화면의 수직선(시야각에 존재하는 수직선)들의 x값이 카메라 평면에서 나타내는 x좌표이다
@@ -102,7 +120,8 @@ void		update_all_rays(t_cub3d *g)
 
 
 
-	//  중심으로 광선을 쏘게 되면 하나의 평면상의 벽도 볼록 렌즈로 보는것처럼 둥그렇게 울어서 보일수 있다. 따라서 유저가 속한 카메라 평면에서 수직의 선을 피사체에 그어서 해당 거리를 가지고 계산한다
+	//  중심으로 광선을 쏘게 되면 하나의 평면상의 벽도 볼록 렌즈로 보는것처럼 둥그렇게 울어서 보일수 있다.
+	//	따라서 유저가 속한 카메라 평면에서 수직의 선을 피사체에 그어서 해당 거리를 가지고 계산한다
 
 	// side == 0 일 경우 (x면에 부딛힌경우)
 	// -> perpWallDist = (mapX - posX + (1 - stepX) / 2) / rayDriX
@@ -115,9 +134,9 @@ void		update_all_rays(t_cub3d *g)
 	// 즉 rayDirX < 0 이면 -> (mapX - posX + 1) / rayDirX 이다
 	// 위 식을 통해 카메라 평면에서 피사체의 수직선까지의 수직거리를 구할수 있다
 
-	// 유저의 카메라평면으로 부터 해당 벽의 거리의 수직 거리(perpWallDist)를 이용해서 화면에 그려야할 선의 높이를 구하자
+	// 유저의 카메라평면으로 부터 해당 벽의 거리의 수직 거리(ray->dist)를 이용해서 화면에 그려야할 선의 높이를 구하자
 
-	// lineHeight = 스크린의 높이 / perpWallDist
+	// lineHeight = 스크린의 높이 / ray->dist
 	// 거리가 멀~~~어질수록 스크린 대비 높이는 낮아진다
 
 	// 스크린 높이의 중앙부 기준으로 시작과 끝은 잡는다
