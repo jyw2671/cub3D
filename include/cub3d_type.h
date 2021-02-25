@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:12:56 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/22 21:58:41 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/25 18:58:33 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,6 @@ typedef struct	s_img
 	int			endian;
 }				t_img;
 
-// typedef struct	s_m_img
-// {
-// 	void	*img;
-// 	int		*data;
-// 	int		size_l;
-// 	int		bpp;
-// 	int		endian;
-// }				t_m_img;
-
 typedef struct	s_ray
 {
 	t_vec		dir;
@@ -104,8 +95,6 @@ typedef struct	s_cub3d
 	void		*mlx;
 	void		*win;
 	t_img		v;
-	t_img		m;
-	// t_m_img		m_map;
 
 	t_key		key;
 
