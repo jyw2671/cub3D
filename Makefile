@@ -6,7 +6,7 @@
 #    By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/26 18:16:35 by yjung             #+#    #+#              #
-#    Updated: 2021/02/18 16:07:29 by yjung            ###   ########.fr        #
+#    Updated: 2021/02/25 19:01:57 by yjung            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,9 +37,13 @@ RM = rm
 RMFLAGS = -f
 
 INC_DIR = include
+# INC_B_DIR - include_bonus
 CFLAGS += -I $(INC_DIR)
+# CFLAGS += -I $(INC_B_DIR)
 SRC_DIR = src
+# SRC_B_DIR = src_bonus
 OBJ_DIR = obj
+# OBJ_B_DIR = obj_bonus
 
 HEADERS = $(wildcard $(INC_DIR)/*.h)
 
