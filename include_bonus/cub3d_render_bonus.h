@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 15:05:59 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/26 12:34:46 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/26 12:37:08 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	render_floor(t_cub3d *g);
 void	render_ceiling(t_cub3d *g);
 void	render_wall(t_cub3d *g);
 void	render_sprite(t_cub3d *g);
-void    render_minimap(t_cub3d *g);
+void    render_mini_map(t_cub3d *g);
 
 #endif
