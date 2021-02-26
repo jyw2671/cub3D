@@ -1,27 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key_mac_bonus.h                                    :+:      :+:    :+:   */
+/*   render_mini_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/26 18:11:28 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/26 12:32:47 by yjung            ###   ########.fr       */
+/*   Created: 2021/02/26 12:28:43 by yjung             #+#    #+#             */
+/*   Updated: 2021/02/26 12:30:16 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KEY_MAC_BONUS_H
-# define KEY_MAC_BONUS_H
+#include "cub3d_bonus.h"
 
-# define KEY_W		13
-# define KEY_A		0
-# define KEY_S		1
-# define KEY_D		2
-# define KEY_SPACE	49
-# define KEY_ESC	53
-# define KEY_UP		126
-# define KEY_DOWN	125
-# define KEY_LEFT	123
-# define KEY_RIGHT	124
-
-#endif

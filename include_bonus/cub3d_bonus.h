@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:10:40 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/22 17:18:01 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/26 12:34:10 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
 
 # include <mlx.h>
 # include <stdlib.h>
@@ -19,16 +19,16 @@
 # include <math.h>
 # include <fcntl.h>
 # include "libft.h"
-# include "x_event.h"
+# include "x_event_bonus.h"
 
-# include "cub3d_type.h"
-# include "cub3d_util.h"
-# include "cub3d_init.h"
-# include "cub3d_update.h"
-# include "cub3d_render.h"
+# include "cub3d_type_bonus.h"
+# include "cub3d_util_bonus.h"
+# include "cub3d_init_bonus.h"
+# include "cub3d_update_bonus.h"
+# include "cub3d_render_bonus.h"
 
-# include "key_mac.h"
-# include "dummy_mac.h"
+# include "key_mac_bonus.h"
+# include "dummy_mac_bonus.h"
 
 # define CUB3D_TITLE "yjung's cub3D"
 # define WALL_STRIP_WIDTH 1

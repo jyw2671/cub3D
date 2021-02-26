@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_init.h                                       :+:      :+:    :+:   */
+/*   cub3d_init_bonus.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 15:05:13 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/18 15:44:00 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/26 12:33:17 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_INIT_H
-# define CUB3D_INIT_H
+#ifndef CUB3D_INIT_BONUS_H
+# define CUB3D_INIT_BONUS_H
 
-# include "cub3d.h"
+# include "cub3d_bonus.h"
 
 # define NO 0
 # define SO 1

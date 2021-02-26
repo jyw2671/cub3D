@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_util.h                                       :+:      :+:    :+:   */
+/*   cub3d_util_bonus.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:12:41 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/17 15:07:45 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/26 12:33:40 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_UTIL_H
-# define CUB3D_UTIL_H
+#ifndef CUB3D_UTIL_BONUS_H
+# define CUB3D_UTIL_BONUS_H
 
-# include "cub3d.h"
+# include "cub3d_bonus.h"
 
 extern t_color	g_color;
 

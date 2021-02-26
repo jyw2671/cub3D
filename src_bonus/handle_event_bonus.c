@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_event.c                                     :+:      :+:    :+:   */
+/*   handle_event_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:15:10 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/25 18:07:38 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/26 12:22:36 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		handle_key_pressed(int keycode, t_cub3d *g)
 	(keycode == KEY_A ? g->key.a = 1 : 0);
 	(keycode == KEY_S ? g->key.s = 1 : 0);
 	(keycode == KEY_D ? g->key.d = 1 : 0);
-	(keycode == KEY_SPACE ? g->key.space = 1 : 0);
+	(keycode == KEY_SPACE ? g->key.space = !g->key.space : 0);
 	(keycode == KEY_UP ? g->key.up = 1 : 0);
 	(keycode == KEY_DOWN ? g->key.down = 1 : 0);
 	(keycode == KEY_LEFT ? g->key.left = 1 : 0);
@@ -34,7 +34,6 @@ int		handle_key_released(int keycode, t_cub3d *g)
 	(keycode == KEY_A ? g->key.a = 0 : 0);
 	(keycode == KEY_S ? g->key.s = 0 : 0);
 	(keycode == KEY_D ? g->key.d = 0 : 0);
-	(keycode == KEY_SPACE ? g->key.space = 0 : 0);
 	(keycode == KEY_UP ? g->key.up = 0 : 0);
 	(keycode == KEY_DOWN ? g->key.down = 0 : 0);
 	(keycode == KEY_LEFT ? g->key.left = 0 : 0);

@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_type.h                                       :+:      :+:    :+:   */
+/*   cub3d_type_bonus.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:12:56 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/25 18:07:21 by yjung            ###   ########.fr       */
+/*   Updated: 2021/02/26 12:33:28 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_TYPE_H
-# define CUB3D_TYPE_H
+#ifndef CUB3D_TYPE_BONUS_H
+# define CUB3D_TYPE_BONUS_H
 
-# include "cub3d.h"
+# include "cub3d_bonus.h"
 
 typedef struct	s_vec
 {
