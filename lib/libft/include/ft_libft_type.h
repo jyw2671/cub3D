@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 19:37:39 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/17 19:38:44 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/02 21:38:15 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 typedef	unsigned long long	t_ull;
 typedef long long			t_ll;
 typedef unsigned long		t_ul;
-typedef long				t_l;
 typedef unsigned int		t_ui;
 typedef unsigned char		t_uc;
+typedef long				t_l;
 
 typedef struct	s_not_use
 {

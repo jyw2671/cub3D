@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 15:54:55 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/25 17:34:46 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/02 20:04:25 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,4 @@ void		put_pixel(t_img *view, int x, int y)
 
 	index = y * view->line + x;
 	view->data[index] = calc_rgba(view->data[index], g_color);
-	// t_color g_color = (t_color)0x00000000;
 }

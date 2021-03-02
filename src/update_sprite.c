@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:22:39 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/25 17:34:42 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/02 20:14:45 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void		update_sprite(t_cub3d *g)
 	{
 		g->sp_order[i] = i;
 		g->sp_dist[i] = \
-			(g->pos.x - g->sp[i].pos.x) * (g->pos.x - g->sp[i].pos.x)
+			(g->pos.x - g->sp[i].pos.x) * (g->pos.x - g->sp[i].pos.x) \
 			+ (g->pos.y - g->sp[i].pos.y) * (g->pos.y - g->sp[i].pos.y);
 	}
 	((i = -1) == -1 ? sort_sprite(g) : 0);
@@ -61,9 +61,9 @@ void		update_sprite(t_cub3d *g)
 		sprite.x = sp->pos.x - g->pos.x;
 		sprite.y = sp->pos.y - g->pos.y;
 		inv_det = 1.0 / (g->plane.x * g->dir.y - g->dir.x * g->plane.y);
-		sp->trans.x = inv_det *
+		sp->trans.x = inv_det * \
 			(g->dir.y * sprite.x - g->dir.x * sprite.y);
-		sp->trans.y = inv_det *
+		sp->trans.y = inv_det * \
 			(-g->plane.y * sprite.x + g->plane.x * sprite.y);
 	}
 }

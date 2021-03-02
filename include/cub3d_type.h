@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:12:56 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/25 18:58:33 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/02 21:17:30 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ typedef union	u_color
 	}			bit;
 	int			i;
 }				t_color;
-
-
 
 typedef struct	s_key
 {
