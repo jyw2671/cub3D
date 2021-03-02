@@ -6,11 +6,11 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:15:22 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/26 12:37:03 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/02 15:34:55 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 // static void	render_minimap(t_cub3d *g)
 // {
@@ -25,7 +25,7 @@ void		render(t_cub3d *g)
 	// 화면을 반 색칠한다 (천장)
 	render_wall(g);
 	render_sprite(g);
-	if (g->key.space == 1)
+	if (g->key.space)
 		render_mini_map(g);
 	// render_minimap(g);
 }

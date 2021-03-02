@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   init_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 15:14:47 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/20 01:17:01 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/02 18:13:05 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 static void	init_window(t_cub3d *g, int flag)
 {
@@ -51,4 +51,6 @@ void		init(t_cub3d *g, char *path, int flag)
 	g->num_rays = g->v.width / WALL_STRIP_WIDTH;
 	if (!(g->rays = malloc(sizeof(t_ray) * g->num_rays)))
 		exit_cub3d_msg(g, "malloc failed");
+	g->key.space = 1;
+	// g->map_size = 7;
 }

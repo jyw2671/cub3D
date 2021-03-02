@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   update_player.c                                    :+:      :+:    :+:   */
+/*   update_player_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:15:30 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/25 18:04:39 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/02 19:07:44 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 static void	check_player_pos(t_cub3d *g, float x, float y)
 {

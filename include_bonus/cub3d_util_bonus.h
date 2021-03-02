@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:12:41 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/26 12:33:40 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/02 19:07:42 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	color_rgba(t_uc r, t_uc g, t_uc b, float a);
 
 t_color	calc_rgba(t_color background, t_color color);
 void	put_pixel(t_img *view, int x, int y);
+// void	put_pixel_map(t_img *view, int x, int y);
 
 void	line(t_img *view, t_vec a, t_vec b);
 void	rect(t_img *view, t_vec position, int width, int height);

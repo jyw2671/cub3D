@@ -1,12 +1,12 @@
-R 99999 99999
+R 1040 720
 NO ./img/NO.xpm
 SO ./img/SO.xpm
 WE ./img/WE.xpm
 EA ./img/EA.xpm
 
-S ./img/ITEM.xpm
+S ./img/item.xpm
 F ./img/FLOOR.xpm
-C ./img/skybox.xpm
+C ./img/CEILING.xpm
 
         1111111111111111111111111
         1000000000110000000220001

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_wall.c                                      :+:      :+:    :+:   */
+/*   render_wall_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:02:56 by yjung             #+#    #+#             */
-/*   Updated: 2021/02/22 21:58:40 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/02 17:58:03 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 static void	render_wall_texture(t_cub3d *g, t_ray *ray, t_vec pos, int wall_h)
 {
