@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:10:25 by yjung             #+#    #+#             */
-/*   Updated: 2021/03/02 20:04:35 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/04 19:09:26 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void		exit_cub3d(t_cub3d *g, int code)
 	(g->v.ptr ? mlx_destroy_image(g->mlx, g->v.ptr) : 0);
 	(g->win ? mlx_destroy_window(g->mlx, g->win) : 0);
 	(g->mlx ? mlx_destroy_display(g->mlx) : 0);
+	system("leaks cub3D");
 	exit(g ? code : 0);
 }
 

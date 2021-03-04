@@ -6,17 +6,14 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:02:31 by yjung             #+#    #+#             */
-/*   Updated: 2021/03/02 21:27:12 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/04 19:28:14 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void		render_sprite_tex(
-	t_cub3d *g,
-	t_sprite *sp,
-	t_ivec size,
-	t_ivec move)
+void		render_sprite_tex(t_cub3d *g, t_sprite *sp, \
+	t_ivec size, t_ivec move)
 {
 	t_ivec	iv;
 	t_ivec	tex;

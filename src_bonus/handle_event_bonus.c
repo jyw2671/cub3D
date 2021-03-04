@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:15:10 by yjung             #+#    #+#             */
-/*   Updated: 2021/03/02 19:07:45 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/04 22:17:10 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,22 +47,11 @@ int		handle_exit_window(t_cub3d *g)
 	return (0);
 }
 
-// static void	update_mini_map(t_cub3d *g)
-// {
-// 	g->m.ptr = mlx_new_image(g->mlx, g->m.width, g->m.height);
-// 	g->m.data = (t_color *)mlx_get_data_addr(g->m.ptr, &g->m.bpp, \
-// 		&g->m.size_l, &g->m.endian);
-// 	g->m.line = g->m.size_l / (g->m.bpp / 8);
-// 	mlx_put_image_to_window(g->mlx, g->win, g->m.ptr, 0, 0);
-// }
-
 int		handle_loop(t_cub3d *g)
 {
 	update(g);
 	render(g);
 	mlx_put_image_to_window(g->mlx, g->win, g->v.ptr, 0, 0);
-	// if (g->key.space == 1)
-	// 	update_mini_map(g);
 	mlx_do_sync(g->mlx);
 	return (0);
 }

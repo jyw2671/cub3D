@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:15:30 by yjung             #+#    #+#             */
-/*   Updated: 2021/03/02 19:07:44 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/04 22:13:08 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static void	check_player_pos(t_cub3d *g, float x, float y)
 	if ('2' == g->map.data[(int)y][(int)x])
 	{
 		pos = new_vec(x - floor(x), y - floor(y));
-		// <math.h>의 함수 -> 소수점 아래를 버린다
 		if ((0.2 < pos.x && pos.x < 0.8) && (0.2 < pos.y && pos.y < 0.8))
 			return ;
 	}
@@ -46,8 +45,6 @@ void		update_player(t_cub3d *g)
 	walk_dir.x = g->key.a ? -1 : 0;
 	walk_dir.x += g->key.d ? 1 : 0;
 	g->dir = rot_vec(g->dir, turn_dir.x * TURN_S * M_PI_180);
-	// g->key.left는 x축에서 왼쪽이므로 -1, g->key.right는 x축에서 오른쪽이므로 1을
-	// 누적해서 더해준다. 그 후 키가 눌러진만큼 3도씩을 곱해 앵글을 회전시켜준다
 	g->plane = rot_vec(g->plane, turn_dir.x * TURN_S * M_PI_180);
 	turn_vec = rot_vec(g->dir, 90 * M_PI_180);
 	if (walk_dir.x != 0 || walk_dir.y != 0)
@@ -59,5 +56,3 @@ void		update_player(t_cub3d *g)
 		check_player_pos(g, new_pos.x, new_pos.y);
 	}
 }
-// turn_dir.y에서 up & down 키 입력시에는 제한 범위가 있어야 할 것 같다
-// 일정 값 이상 위 아래 회전시 제한 범위가

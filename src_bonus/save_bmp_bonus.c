@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:19:39 by yjung             #+#    #+#             */
-/*   Updated: 2021/03/02 15:35:31 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/04 17:20:51 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ int			save_bmp(t_cub3d *g)
 	bmp_header(g, fd);
 	bmp_data(g, fd);
 	close(fd);
-	return (SUCCES);
+	system("leaks cub3D");
+	exit(SUCCES);
 }

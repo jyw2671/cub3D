@@ -6,17 +6,14 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:02:31 by yjung             #+#    #+#             */
-/*   Updated: 2021/03/02 15:35:22 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/04 21:45:17 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-void		render_sprite_tex(
-	t_cub3d *g,
-	t_sprite *sp,
-	t_ivec size,
-	t_ivec move)
+void		render_sprite_tex(t_cub3d *g, t_sprite *sp, \
+	t_ivec size, t_ivec move)
 {
 	t_ivec	iv;
 	t_ivec	tex;
@@ -33,7 +30,7 @@ void		render_sprite_tex(
 	while (++iv.x < end.x)
 	{
 		tex.x = ((iv.x - (-size.x / 2 + move.x)) * sp->tex->width / size.x);
-		iv.y = (sp->trans.y > 0 && iv.x > 0 && iv.x < g->v.width && sp->trans.y
+		iv.y = (sp->trans.y > 0 && iv.x > 0 && iv.x < g->v.width && sp->trans.y\
 			< g->rays[iv.x / WALL_STRIP_WIDTH].dist ? start.y - 1 : end.y);
 		while (++iv.y < end.y)
 		{

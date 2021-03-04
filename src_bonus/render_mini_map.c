@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:28:43 by yjung             #+#    #+#             */
-/*   Updated: 2021/03/02 19:07:38 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/04 21:44:48 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,10 @@ void		render_mini_map(t_cub3d *g)
 
 	size = g->v.height > g->v.width ?
 		g->v.width / 6 : g->v.height / 6;
-	// init 부분에서 받은 해상도의 가로 세로를 각각 6으로 나눈 수만큼을 mini_map의 사이즈로 저장
-	// obj = new_vec(g->pos.x - 5, g->pos.y - 5);
 	obj = new_vec(g->pos.x - 6, g->pos.y - 6);
 	step = ((g->pos.x + 6) - obj.x) / size;
 	g_color = rgba(200, 200, 200, 1);
 	render_map(g, size, obj, step);
 	g_color = rgba(1, 100, 123, 1);
 	mid_point_rect(&g->v, new_vec(size / 2, size / 2), size / 15, size / 15);
-	// 위에서 저장한 mini_map의 해상도 크기의 1/15 크기의 플레이어를 만들어주고
 }

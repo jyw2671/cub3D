@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:12:56 by yjung             #+#    #+#             */
-/*   Updated: 2021/03/02 21:17:30 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/04 20:11:57 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ typedef struct	s_key
 	char		a		:1;
 	char		s		:1;
 	char		d		:1;
-	char		space	:1;
 	char		up		:1;
 	char		down	:1;
 	char		left	:1;

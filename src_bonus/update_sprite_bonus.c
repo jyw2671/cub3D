@@ -6,7 +6,7 @@
 /*   By: yjung <yjung@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:22:39 by yjung             #+#    #+#             */
-/*   Updated: 2021/03/02 15:35:48 by yjung            ###   ########.fr       */
+/*   Updated: 2021/03/04 21:47:26 by yjung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void		update_sprite(t_cub3d *g)
 	{
 		g->sp_order[i] = i;
 		g->sp_dist[i] = \
-			(g->pos.x - g->sp[i].pos.x) * (g->pos.x - g->sp[i].pos.x)
+			(g->pos.x - g->sp[i].pos.x) * (g->pos.x - g->sp[i].pos.x) \
 			+ (g->pos.y - g->sp[i].pos.y) * (g->pos.y - g->sp[i].pos.y);
 	}
 	((i = -1) == -1 ? sort_sprite(g) : 0);
